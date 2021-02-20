@@ -1,0 +1,13 @@
+<div class="event">
+    <div class="content">
+        <div class="summary <%= 'right aligned' if @current_user.id == message.user.id %>">
+        <em>
+            <% if @current_user.id != message.user.id %>
+                <%= message.user.username%>:
+            <% end %>
+        </em> 
+            <%= message.body%>
+            <small class="mt-2 ml-3"><%= time_ago_in_words(message.created_at)%></small>
+        </div>
+    </div>
+</div>
